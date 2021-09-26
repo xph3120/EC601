@@ -10,3 +10,7 @@ Run commands in terminal:
 pip install requests
 
 pip install twarc
+
+A test of users_lookup.py:
+
+![image](https://user-images.githubusercontent.com/80809231/134820880-60a364cc-12e5-41a0-92e4-3edf2b41d35e.png)
