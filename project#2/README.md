@@ -13,6 +13,6 @@ pip install requests
 
 pip install twarc
 
-A test of users_lookup.py:
+A test of users_lookup.py: I entered Boston University ECE and got its created time, id, location and so on.
 
-![image](https://user-images.githubusercontent.com/80809231/134820880-60a364cc-12e5-41a0-92e4-3edf2b41d35e.png)
+![image](https://user-images.githubusercontent.com/80809231/134821163-a5daf795-709f-4222-8e2e-716c56a74519.png)
