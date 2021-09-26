@@ -1,5 +1,7 @@
 # EC601 project2
 
+@https://github.com/twitterdev/Twitter-API-v2-sample-code
+
 Look up tweets with detailed information by certain Ids, look up  twitter users, look up liking users
 and get fllowers.
 
