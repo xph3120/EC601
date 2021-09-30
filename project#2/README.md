@@ -8,8 +8,11 @@ Twitter API & Google NLP API
 and get followers.
 
 Before use these source files, some packages need to be installed as below.
+
 Run commands in terminal:
+
 pip install requests
+
 pip install twarc
 
 A test of users_lookup.py: I entered Boston University ECE and got its created time, id, location and so on.
