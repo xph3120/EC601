@@ -25,5 +25,5 @@ A test of tweetslookup.py: I entered the id of one of Joe Biden's tweets and got
 
 2. Build and deploy custom machine learning models that analyze documents, categorizing them, identify entities within them, or assessing attitudes within them.
 
-With a single-label classification training in Google NLP API, I implemented a test for a text:
+With a single-label classification training in Google NLP API, here I implemented a test for the label classification of a text:
 ![image](https://user-images.githubusercontent.com/80809231/135372330-ce79182f-8d5d-4594-aaea-fcbb582b226f.png)
