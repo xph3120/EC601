@@ -1,0 +1,89 @@
+#!/usr/bin/env python
+# Copyright 2021 Xiaopeng Huang xphuang@bu.edu
+
+import os, sys, string, math, stat, pwd, grp, datetime
+
+files = os.listdir()
+
+thelowerletters = string.ascii_lowercase
+theupperletters = string.ascii_uppercase
+thedigits = string.digits
+
+def ignore_all(x, keep_these=thelowerletters+theupperletters+thedigits+'$'):
+    # ignore symbols
+    keepers = [let for let in x if let in keep_these]
+    # ignore capitalization
+    lower_keepers = [str.lower(let) for let in keepers]
+    return "".join(lower_keepers)
+
+def ignore_symbols(x, keep_these=thelowerletters+theupperletters+thedigits+'$'):
+    # ignore symbols
+    keepers = [let for let in x if let in keep_these]
+    return "".join(keepers)
+
+def capitalization_sort(x):
+    # still need to ignore the symbols and sort by capitalization
+    x = ignore_symbols(x, keep_these=thelowerletters+theupperletters+thedigits+'$')
+    x_order = ''
+    for let in x:
+        order = ord(let)
+        # sort uppercase after lowercase
+        if 64 < ord(let) < 91:
+            order = ord(let) + 33
+        x_order += str(order)
+    return x_order
+
+def symbols_sort(x):
+    x_order = ''
+    for let in x:
+        order = ord(let)
+        # symbols after digits/letters in ASCII format should be order-changed
+        if 31 < order < 36:
+            order = ord(let) - 22
+            x_order += '0'+str(order)
+        if 36 < order < 48:
+            order = ord(let) - 22
+            x_order += '0'+str(order)
+        if 57 < order < 65:
+            order = ord(let) - 32
+            x_order += '0'+str(order)
+        if 90 < order < 97:
+            order = ord(let) - 58
+            x_order += '0'+str(order)
+        if 122 < order < 127:
+            order = ord(let) - 84
+            x_order += '0'+str(order)
+        x_order += str(order)
+    return x_order
+
+def complicated(x):
+    return(ignore_all(x, keep_these=thelowerletters+theupperletters+thedigits+'$'), capitalization_sort(x), symbols_sort(x), x)
+
+files.sort(key = complicated)
+
+all_size = 0
+size_ls = []
+for file in files:
+    if file[0] != '.':
+        status = os.stat(file)
+        file_size = status.st_size
+        size_ls.append(str(file_size))
+        all_size += math.ceil((file_size)/4096)*4
+
+print('total', all_size)
+
+ra = len(max(size_ls, key = len))
+
+for file in files:
+    if file[0] != '.':
+        status = os.stat(file)
+        file_mode = stat.filemode(status.st_mode)
+        num_links = status.st_nlink
+        u_owner = status.st_uid
+        u_owner_name = pwd.getpwuid(u_owner)[0]
+        g_owner = status.st_gid
+        g_owner_name = grp.getgrgid(g_owner)[0]
+        file_size = status.st_size
+        modi_time = datetime.datetime.fromtimestamp(status.st_mtime).strftime('%b %d %H:%M')
+        print(file_mode,num_links,u_owner_name,g_owner_name," "*(ra-len(str(file_size))),end = "")
+        print(file_size,modi_time,file)
