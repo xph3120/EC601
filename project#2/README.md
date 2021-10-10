@@ -1,9 +1,11 @@
 # EC601 project2
-Twitter API & Google NLP API
+Twitter API & Google NLP API & Sentiment dataset in cvs format
 
 @https://github.com/twitterdev/Twitter-API-v2-sample-code
 
 @https://console.cloud.google.com/natural-language/locations/us-central1/datasets/TCN4475228379083177984;modelId=TCN3596394782315773952/predict?project=ec601-327421
+
+@https://www.kaggle.com/columbine/imdb-dataset-sentiment-analysis-in-csv-format
 
 1. Look up tweets with detailed information by certain Ids, look up  twitter users, look up liking users
 and get followers.
@@ -28,3 +30,10 @@ A test of tweetslookup.py: I entered the id of one of Joe Biden's tweets and got
 
 With a single-label classification training in Google NLP API, here I implemented a test for the label classification of a text:
 ![image](https://user-images.githubusercontent.com/80809231/135372330-ce79182f-8d5d-4594-aaea-fcbb582b226f.png)
+
+3. We import a sentiment dataset, training and predict our target context. Tests are shown below:
+
+![image](https://user-images.githubusercontent.com/80809231/136705664-87470da3-664e-4157-9559-5d802de026ac.png)
+
+![image](https://user-images.githubusercontent.com/80809231/136705694-720e0bb4-32b2-420d-9f27-018842fc7973.png)
+
