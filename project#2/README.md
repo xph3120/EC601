@@ -31,7 +31,7 @@ A test of tweetslookup.py: I entered the id of one of Joe Biden's tweets and got
 With a single-label classification training in Google NLP API, here I implemented a test for the label classification of a text:
 ![image](https://user-images.githubusercontent.com/80809231/135372330-ce79182f-8d5d-4594-aaea-fcbb582b226f.png)
 
-3. We import a sentiment dataset, training and predict our target context. Tests are shown below:
+3. Import a sentiment dataset, training and predict our target context (1 represents positive and 0 represents negative). Tests are shown below:
 
 ![image](https://user-images.githubusercontent.com/80809231/136705664-87470da3-664e-4157-9559-5d802de026ac.png)
 
