@@ -3,7 +3,6 @@ EC 601 Group Project: VERIFICATION OF AHB MASTER TO WISHBONE SLAVE USING UVM
 -- Abinaya Senthil, Farhan Khan, Shuhao Hu, Xiaopeng Huang
 
 Sprint 1 link:
-
 https://docs.google.com/presentation/d/1RZhgds5iN8Xj3IfqLlZ5X3yoAmezIOzjaEti-yKXKEo/edit?usp=sharing
 
 Sprint 2 link:
