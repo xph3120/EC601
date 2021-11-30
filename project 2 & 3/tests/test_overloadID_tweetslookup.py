@@ -62,6 +62,8 @@ def connect_to_endpoint(url):
 
 def main():
     url = create_url()
+    # raise a TypeError
+    assert url == pytest.raises(TypeError)
     json_response = connect_to_endpoint(url)
     print(json.dumps(json_response, indent=4, sort_keys=True))
 
